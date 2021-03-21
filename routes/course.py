@@ -68,8 +68,8 @@ def get_courses():
         response.status_code = 422
         return response
     page_number = int(request.args.get("page-number", 1))
-    page_size = int(request.args.get("page-size", 5))
-    title = request.args.get("title", None)
+    page_size = int(request.args.get("page-size", 200))
+    title = request.args.get("title-words", None)
     response = accessor.get_all_courses(page_number, page_size, title)
     return response
 
