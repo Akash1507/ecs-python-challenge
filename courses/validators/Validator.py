@@ -17,7 +17,7 @@ class CourseGetSchema(Schema):
         strict=False,
         validate=[Range(min=1, error="Value must be greater than 0")],
     )
-    title = fields.Str(required=False)
+    title_words = fields.Str(data_key="title-words",required=False)
 
 
 class CoursePostSchema(Schema):
