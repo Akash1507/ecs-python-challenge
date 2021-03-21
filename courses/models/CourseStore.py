@@ -1,6 +1,7 @@
 from courses.models.Course import Course
 from collections import OrderedDict
 import json
+import os
 
 class CourseStore(object):
     """
@@ -19,7 +20,7 @@ class CourseStore(object):
         Method of Course Store class used to load data.
         """
         course_list = json.load(
-            open("")
+            open(os.path.join(os.path.dirname(os.path.abspath("run.py")),"json/course.json"))
         )
         data = OrderedDict()
         for course_data in course_list:
